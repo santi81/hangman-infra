@@ -2,19 +2,19 @@
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name: backend
+      name: hangman-api
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: backend
+          app: hangman-api
       template:
         metadata:
           labels:
-            app: backend
+            app: hangman-api
         spec:
           containers:
           - name: backend
-            image: gcr.io/sylvan-epoch-274407/sparrow-account:v0.1
+            image: gcr.io/sylvan-epoch-274407/hangman-api
             ports:
-              - containerPort: 8080
+              - containerPort: 9905
