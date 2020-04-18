@@ -1,0 +1,20 @@
+---
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: hangman-deployment-ui
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: hangman-deployment-ui
+      template:
+        metadata:
+          labels:
+            app: hangman-deployment-ui
+        spec:
+          containers:
+          - name: hangman-deployment-ui
+            image: gcr.io/sylvan-epoch-274407/hangman-ui:latest
+            ports:
+              - containerPort: 9000

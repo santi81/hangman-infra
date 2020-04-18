@@ -1,0 +1,14 @@
+---
+    apiVersion: getambassador.io/v2
+    kind: Host
+    metadata:
+      name: benubenu
+    spec:
+      hostname: "benubenu"
+      acmeProvider:
+        authority: none
+      tlsSecret:
+        name: ambassador-certs
+      selector:
+        matchLabels:
+          hostname: benubenu
