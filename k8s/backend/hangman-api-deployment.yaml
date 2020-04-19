@@ -14,7 +14,8 @@
             app: hangman-api
         spec:
           containers:
-          - name: backend
+          - name: hangman-api
             image: gcr.io/sylvan-epoch-274407/hangman-api
             ports:
               - containerPort: 9905
+            imagePullPolicy: Always

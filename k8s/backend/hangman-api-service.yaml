@@ -3,9 +3,24 @@
     kind: Service
     metadata:
       name: hangman-api-service
+      annotations:
+        getambassador.io/config: |
+          ---
+          apiVersion: ambassador/v1
+          kind: Mapping
+          name: hangman-api-mapping
+          prefix: /api/
+          service: hangman-api-service
+          cors:
+            origins: "*"
+            methods: POST, GET, OPTIONS
+          add_response_headers:
+            Access-Control-Allow-Origin: "*"
+            Connection: Keep-Alive
+          host_rewrite: hangman-api-service
     spec:
       ports:
-        - port: 9905
+        - port: 80
           targetPort: 9905
           name: http
           protocol: TCP

@@ -18,3 +18,4 @@
             image: gcr.io/sylvan-epoch-274407/hangman-ui:latest
             ports:
               - containerPort: 9000
+            imagePullPolicy: Always
