@@ -1,5 +1,6 @@
 # hangman-infra
-## Hangman : https://benubenu.com/hangman
+
+https://benubenu.com/hangman
 
 
 Hangman infra
